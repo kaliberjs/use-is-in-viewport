@@ -1,0 +1,76 @@
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  z-index: 0;
+  color: white;
+  overflow-y: auto;
+  padding-top: 90vh;
+  padding-bottom: 110vh;
+
+  & > .element {
+    margin: 2rem;
+  }
+
+  & > .rootMargin {
+    position: fixed;
+  }
+
+  & > .button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+  }
+}
+
+.button {
+  background-color: rgba(223,9,142,1);
+  color: white;
+  padding: 1rem;
+  transition: background-color .35s, color .35s;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.element {
+  box-sizing: border-box;
+  width: 200px !important;
+  height: 200px !important;
+  padding: 2rem;
+  background-color: rgba(10,34,231,1);
+  transition: background-color .35s;
+
+  &.isRevealed {
+    background-color: rgba(223,9,142,1);
+  }
+}
+
+.rootMargin {
+  position: relative;
+  pointer-events: none;
+
+  &::before,
+  &::after {
+    content: '';
+    position: fixed;
+  }
+
+  &::before {
+    top: 0;
+    bottom: 0;
+    left: inherit;
+    right: inherit;
+    border-left: 1px solid lime;
+    border-right: 1px solid orange;
+  }
+
+  &::after {
+    left: 0;
+    right: 0;
+    top: inherit;
+    bottom: inherit;
+    border-top: 1px solid lime;
+    border-bottom: 1px solid orange;
+  }
+}
