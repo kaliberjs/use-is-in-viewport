@@ -1,8 +1,12 @@
 import { useIsIntersecting, useWasIntersecting } from '@kaliber/use-is-intersecting'
 
 export function useIsInViewport({ rootMargin, threshold, disabled = undefined }) {
-  const { isIntersecting: isInViewport, ref } = useIsIntersecting({ rootMargin, threshold, disabled })
-  return { isInViewport, ref }
+  const { 
+    ref,
+    isIntersecting: isInViewport, 
+    wasIntersecting: wasInViewport
+  } = useIsIntersecting({ rootMargin, threshold, disabled })
+  return { isInViewport, wasInViewport, ref }
 }
 
 export function useWasInViewport({ rootMargin, threshold }) {
