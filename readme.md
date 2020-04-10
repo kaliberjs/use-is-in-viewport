@@ -26,16 +26,38 @@ yarn add @kaliber/use-is-in-viewport
 ## Usage
 ```jsx
 function Component() {
-  const { ref: elementRef, isInViewport } = useIsInViewport({ rootMargin: '-10%' })
+  const { ref: isInViewportRef, isInViewport } = useIsInViewport({ rootMargin: '-10%' })
+  const { ref: wasInViewportRef, wasInViewport } = useWasInViewport({ rootMargin: '-10%' })
 
   return (
-    <div className={styles.component}>
-      <p>The element is {isInViewport ? 'visible' : 'not visible'}</p>
+    <div>
+      <div ref={isInViewportRef}>
+        {isInViewport 
+          ? 'Is in viewport'  
+          : 'Is not in viewport'}
+      </div>
 
-      <div
-        ref={elementRef}
-        className={cx(styles.element, isInViewport && styles.isRevealed)}
-      />
+      <div ref={wasInViewportRef} >
+        {wasInViewport 
+          ? 'Has been in viewport' 
+          : 'Has not yet been in viewport'}
+      </div>
+    </div>
+  )
+}
+```
+
+The `useIsInViewport` hook also returns wether an element has been in the viewport in the past (`wasInViewport`). The main difference with the dedicated `useWasInViewport` hook is that the IntersectionObserver doesn't get cleaned up, since the hook still has to track wether the element is currently in the viewport. This can be useful if you want to pause an expensive operation, but also want the element to have a reveal animation.
+
+```jsx
+function Component() {
+  const { ref: elementRef, isInViewport, wasInViewport } = useIsInViewport()
+
+  return (
+    <div>
+      <div ref={elementRef} className={cx(wasInViewport && styles.isRevealed)}>
+        {isInViewport ? 'Is in viewport' : 'Is not in viewport'}
+      </div>
     </div>
   )
 }
