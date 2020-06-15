@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@kaliber/use-is-intersecting@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@kaliber/use-is-intersecting/-/use-is-intersecting-1.0.0.tgz#27cc9fa5b16c2660ca2bc655b3f534955840a4d2"
-  integrity sha512-aUqVH7hfvHyDRDjwysOc3gM6BCoSkPKMHN5Yco2HW7vyP1oujca8NsXKdS68oc/yid0gRJ2M9K6PeKF3ru5B0g==
+"@kaliber/use-is-intersecting@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@kaliber/use-is-intersecting/-/use-is-intersecting-1.0.1.tgz#bb1e9de7a1838404c4d1fd3610525aa2768c007e"
+  integrity sha512-IGOxBsMal52J8EKDnQUeNSfhgY/CXCr6+VfhkPFUNAOeS9k/mkmJfe/qJlaGJhiId0hpeEEi98v4n1fwzOpdNA==
   dependencies:
     "@kaliber/use-observed-ref" "^1.0.0"
 
