@@ -26,13 +26,13 @@ export default function App() {
         className={cx(styles.element, isInViewport && styles.isRevealed)}
         ref={isInViewportRef}
       >
-        {isInViewport ? 'Is in intersection root element' : 'Is not in intersection root element'}
+        {isInViewport ? 'Is in viewport' : 'Is not in viewport'}
       </div>
       <div
         className={cx(styles.element, wasInViewport && styles.isRevealed)}
         ref={wasInViewportRef}
       >
-        {wasInViewport ? 'Has been in intersection root element' : 'Has not yet been in intersection root element'}
+        {wasInViewport ? 'Has been in viewport' : 'Has not yet been in viewport'}
       </div>
     </div>
   )
