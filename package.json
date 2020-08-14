@@ -28,6 +28,6 @@
     "Peeke Kuepers <peeke@kaliber.net> (https://peeke.nl)"
   ],
   "dependencies": {
-    "@kaliber/use-is-intersecting": "^1.0.1"
+    "@kaliber/use-is-intersecting": "^1.1.0"
   }
 }
